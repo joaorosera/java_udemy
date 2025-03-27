@@ -1,46 +1,35 @@
-package application;
+package curso_programacao;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Product;
+import util.Calculator;
 
 public class Program {
+	
+	//Final = valor constante, uma vez atribuído, não muda mais
+	
 
 	public static void main(String[] args) {
+
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Product product = new Product();
-		System.out.println("Enther product data: ");
-		System.out.println("Name: ");
-		product.name = sc.nextLine();
-		System.out.print("Price: ");
-		product.price = sc.nextDouble();
-		System.out.print("Quantity in stock: ");
-		product.quantity = sc.nextInt();
+		System.out.print("Enter radius: ");
+		double radius = sc.nextDouble();
 		
-		System.out.println();
-		System.out.println("Product data: " + product);
-		                                
-		System.out.println();
-		System.out.println("Enther te number of products to be added in stock: ");
-		int quantity = sc.nextInt();
-		product.addProducts(quantity);
+		double c = Calculator.circumference(radius);
 		
-		System.out.println();
-		System.out.println("Updated data: " + product);
+		double v = Calculator.volume(radius);
 		
-		System.out.println();
-		System.out.println("Enther te number of products to be removed in stock: ");
-		int quantity1 = sc.nextInt();
-		product.removeProducts(quantity1);
+		System.out.printf("Circumference: %.2f%n", c);
+		System.out.printf("Volume: %.2f%n", v);
+		System.out.printf("PI Value: %.2f%n", Calculator.PI);
 		
-		System.out.println();
-		System.out.println("Updated data: " + product);
 		
 		sc.close();
-	}
 
+	}
+	
 }
