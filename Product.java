@@ -1,43 +1,34 @@
-package entities;
+package entities; // Define o pacote ao qual esta classe pertence
 
 public class Product {
-	public String name;
-	public double price;
-	public int quantity;
-	
-	public Product() {
-		
-	}
-	
-	public Product(String name, double price, int quantity) {
-		this.name = name;
-		this.price = price;
-		this.quantity = quantity;
-	}
-	
-	public Product(String name, double price) {
-		this.name = name;
-		this.price = price;
-	}
-
-	public double totalValueInStock() {
-		return price * quantity;
-	}
-
-	public void addProducts(int quantity) {
-		this.quantity += quantity;
-	}
-
-	public void removeProducts(int quantity) {
-		this.quantity -= quantity;
-	}
-
-	public String toString() {
-		return name 
-				+ ", $ " 
-				+ String.format("%.2f", price)
-				+ ", " 
-				+ quantity + " units, Total: $ "
-				+ String.format("%.2f", totalValueInStock());
-	}
+    
+    // Atributos privados da classe Product
+    private String name;
+    private double price;
+    
+    // Construtor que inicializa o objeto Product com nome e preço
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+    
+    // Método getter para obter o nome do produto
+    public String getName() {
+        return name;
+    }
+    
+    // Método setter para modificar o nome do produto
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    // Método getter para obter o preço do produto
+    public double getPrice() {
+        return price;
+    }
+    
+    // Método setter para modificar o preço do produto
+    public void setPrice(double price) {
+        this.price = price;
+    }
 }
